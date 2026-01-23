@@ -1,1 +1,1 @@
-For all cad files
+exported CAD files in neutral formats (STEP, STL).
