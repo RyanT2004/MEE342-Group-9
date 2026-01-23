@@ -1,1 +1,1 @@
-Folder for all images of project
+images used in the report (diagrams, CAD screenshots, photos, etc.).
