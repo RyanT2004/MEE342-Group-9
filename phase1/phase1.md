@@ -84,7 +84,7 @@ Possible Structural Deflection due to Heavy Gears on Shafts: Check kinematics of
 To address most of these issues, we will test multiple iterations of the transmission via different gear ratios and different sizes of critical components to find the perfect balance that will mitigate these failures.
 
 ## **Transmission Diagram**
-
+![](https://github.com/RyanT2004/MEE342-Group-9/blob/main/phase1/Manual%20Transmission%20System.png)
 
 ## **Critical Components**
 
