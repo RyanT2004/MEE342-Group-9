@@ -7,4 +7,4 @@ For All Things Related to MEE342 Semester Project
 
 [Images File Info](images/README.md)
 
-[Video File Info](videos/README.md)
+[Video File Info](videos/video.md)
