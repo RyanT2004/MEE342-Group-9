@@ -1,10 +1,17 @@
-# MEE342-Group-9
-For All Things Related to MEE342 Semester Project
+<h1 align="center">Shift Happens</h1>
 
-[CAD File Info](cad/README.md)
+<p align="center">
+  <img src="images/TeamLogo.png" width="400">
+</p>
 
-[Analysis File Info](analysis/README.md)
+## Content
+* [CAD](cad/README.md)
 
-[Images File Info](images/README.md)
+* [Analysis](analysis/README.md)
 
-[Video File Info](videos/video.md)
+* [Images](images/README.md)
+
+* [Videos](videos/video.md)
+
+## Phase Reports
+* [Phase 1](phase1/phase1.md)
