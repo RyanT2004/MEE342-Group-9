@@ -5,13 +5,13 @@
 </p>
 
 ## Content
-* [CAD](cad/README.md)
+* [CAD](cad)
 
-* [Analysis](analysis/README.md)
+* [Analysis](analysis)
 
-* [Images](images/README.md)
+* [Images](images)
 
-* [Videos](videos/video.md)
+* [Videos](videos)
 
 ## Phase Reports
 * [Phase 1](phase1/phase1.md)
