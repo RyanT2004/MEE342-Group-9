@@ -2,12 +2,16 @@
 
 A six speed manual transmission is a mechanical system that is designed to transfer power from the engine to the drive wheels of a vehicle. The driver then has the option to select from multiple gear ratios to optimize the drivability of the vehicle in many different scenarios on the road. Key advantages of using such a system is improved fuel usage, wider range of gear ratios, and a more enhanced driving experience. This specific mechanical system operates through the use of multiple combinations of gears, shafts, and synchronizers which in turn creates a robust and efficient drivetrain solution. This report will explain many different concepts of the six gear manual transmission system, going from how the general system works, key components, and some potential failure points in such a system.
 
+![](https://github.com/RyanT2004/MEE342-Group-9/blob/main/images/GIF.gif)
+
 ## **System Function and Decomposition**
 A manual transmission system works in tandem with the engine and flywheel. Power from the engine enters the transmission through the input shaft and then passes through the selected gear ratio. The multiple gear ratios in the transmission system determines the speed and torque one would want in a situation. That power then exits the system using the output shaft which is connected to the drivetrain of the vehicle.
 
 In order to ensure smooth gear transitioning and engagement, synchronizers are used in order to match rotational speeds before the meshing of the gear teeth which also reduces wear on the gears as well. The clutch in the system serves as a way to easily shift between gears and does so by temporarily disconnecting engine power when shifting.
 
-## **Parts List With Definitions**
+![](https://github.com/RyanT2004/MEE342-Group-9/blob/main/images/Diagram.jpg)
+
+## **Parts List**
 
 **Input shaft**  
 The input shaft is the power-entry component that transmits torque from the engine into the gearbox. It is typically splined to the clutch disc and carries the initial drive gear that meshes with the countershaft. It also serves as a pilot support for the output shaft, requiring a high degree of concentricity to prevent vibration and ensure smooth power transfer to the rest of the gear train.
@@ -76,7 +80,7 @@ Only one gear is engaged at a time. Shifting occurs by disengaging the current g
 
 ## **Preliminary Failure Mode Review**
 
-**Possible Failures**  
+**Possible Failures:**  
 Misalignment: A misalignment occurs when the shafts bends under high gear loading forces. This causes the gear teeth to mesh at an angle instead of perfectly parallel which leads to uneven stress distribution across the tooth face and premature gear pitting.  
 
 Excessive Torque on Output Shaft: In most 6 gear transmissions, having too much torque applied to the output shaft can cause possible angle of twist on the shaft which would wear out the shaft faster.
@@ -89,7 +93,7 @@ Gears Seize / Grinding Gears: Calculate gear ratios as well as making sure the r
 
 Possible Structural Deflection due to Heavy Gears on Shafts: Check kinematics of the shaft and check material shear stress.
 
-**Possible Solutions to These Issues**  
+**Possible Solutions to These Issues:**  
 To address most of these issues, we will test multiple iterations of the transmission via different gear ratios and different sizes of critical components to find the perfect balance that will mitigate these failures.
 
 ## **Transmission Diagram**
@@ -103,6 +107,8 @@ Components where design purposes are especially important:
 * **Housing:** The housing must fit the entire system with as little spare room as possible to save material and to make sure the system does not move too much.
 * **Synchronizers:** Synchronizers will work with the different gear ratios to help make shifting into a different gear smoother and more efficient. Both the gears and synchronizer will need to have proper dimensions so that each will not get in each other's way.
 
+![](https://github.com/RyanT2004/MEE342-Group-9/blob/main/images/Synchronizer.png)
+
 ## **Critical Design Parameters**
 * 5 forward gears + 1 reverse gear
 * PETG material will be used to model transmission
@@ -114,8 +120,12 @@ Components where design purposes are especially important:
   4th: Input 34T, Output 36 T = 1.06:1  
   5th: Input 35T, Output 35 T = 1:1  
   6th: Input 38T, Output 32 T = 0.84:1
-  
+
 * Input/Output Shaft Diameter 25.4 mm
 * Clearances TBD
 * Distance between gears TBD
 * Distance between input/output Shaft TBD
+  
+## **References**
+https://californiamotorsports.net/pages/porsche-901-transaxle-specification  
+https://www.artofmanliness.com/skills/manly-know-how/gearhead-101-understanding-manual-transmission/  
