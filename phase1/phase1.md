@@ -1,3 +1,12 @@
+## **Executive Summary**
+
+A six speed manual transmission is a mechanical system that is designed to transfer power from the engine to the drive wheels of a vehicle. The driver then has the option to select from multiple gear ratios to optimize the drivability of the vehicle in many different scenarios on the road. Key advantages of using such a system is improved fuel usage, wider range of gear ratios, and a more enhanced driving experience. This specific mechanical system operates through the use of multiple combinations of gears, shafts, and synchronizers which in turn creates a robust and efficient drivetrain solution. This report will explain many different concepts of the six gear manual transmission system, going from how the general system works, key components, and some potential failure points in such a system.
+
+## **System Function and Decomposition**
+A manual transmission system works in tandem with the engine and flywheel. Power from the engine enters the transmission through the input shaft and then passes through the selected gear ratio. The multiple gear ratios in the transmission system determines the speed and torque one would want in a situation. That power then exits the system using the output shaft which is connected to the drivetrain of the vehicle.
+
+In order to ensure smooth gear transitioning and engagement, synchronizers are used in order to match rotational speeds before the meshing of the gear teeth which also reduces wear on the gears as well. The clutch in the system serves as a way to easily shift between gears and does so by temporarily disconnecting engine power when shifting.
+
 ## **Parts List With Definitions**
 
 **Input shaft**  
@@ -89,16 +98,24 @@ To address most of these issues, we will test multiple iterations of the transmi
 ## **Critical Components**
 
 Components where design purposes are especially important:
-* Gears
-* Input/Output Shafts
-* Housing
-* Synchronizers
+* **Gears:** Finding the right gear ratios will be the main task to focus on as each gear setting in the transmission will determine a vehicle’s speed output and torque.
+* **Input/Output Shafts:** Determining the diameter of the input and output shaft will ensure that the transmission can switch between gears easier and to make sure the shafts can support the weight of all the gears without it snapping under the weight.
+* **Housing:** The housing must fit the entire system with as little spare room as possible to save material and to make sure the system does not move too much.
+* **Synchronizers:** Synchronizers will work with the different gear ratios to help make shifting into a different gear smoother and more efficient. Both the gears and synchronizer will need to have proper dimensions so that each will not get in each other's way.
 
 ## **Critical Design Parameters**
 * 5 forward gears + 1 reverse gear
 * PETG material will be used to model transmission
-* Gear tooth and ratios TBD
-* Shaft Diameter TBD
+* Gear tooth and ratios
+
+  1st: Input 20T, Output 50 T = 2.5:1  
+  2nd: Input 28T, Output 42 T = 1.5:1  
+  3rd: Input 32T, Output 38 T = 1.19:1  
+  4th: Input 34T, Output 36 T = 1.06:1  
+  5th: Input 35T, Output 35 T = 1:1  
+  6th: Input 38T, Output 32 T = 0.84:1
+  
+* Input/Output Shaft Diameter 25.4 mm
 * Clearances TBD
 * Distance between gears TBD
 * Distance between input/output Shaft TBD
