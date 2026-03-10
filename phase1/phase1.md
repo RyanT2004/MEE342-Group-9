@@ -1,5 +1,5 @@
 ## **Executive Summary**
-
+---
 A six speed manual transmission is a mechanical system that is designed to transfer power from the engine to the drive wheels of a vehicle. The driver then has the option to select from multiple gear ratios to optimize the drivability of the vehicle in many different scenarios on the road. Key advantages of using such a system is improved fuel usage, wider range of gear ratios, and a more enhanced driving experience. This specific mechanical system operates through the use of multiple combinations of gears, shafts, and synchronizers which in turn creates a robust and efficient drivetrain solution. This report will explain many different concepts of the six gear manual transmission system, going from how the general system works, key components, and some potential failure points in such a system.
 
 <div align="center">
@@ -7,6 +7,7 @@ A six speed manual transmission is a mechanical system that is designed to trans
   <p><em>Figure 1. Simulation showing gear engagement in the manual transmission.</em></p>
 </div>
 
+---
 ## **System Function and Decomposition**
 A manual transmission system works in tandem with the engine and flywheel. Power from the engine enters the transmission through the input shaft and then passes through the selected gear ratio. The multiple gear ratios in the transmission system determines the speed and torque one would want in a situation. That power then exits the system using the output shaft which is connected to the drivetrain of the vehicle.
 
@@ -17,6 +18,7 @@ In order to ensure smooth gear transitioning and engagement, synchronizers are u
   <p><em>Figure 2. Image of transmission working with the other vehicle components.</em></p>
 </div>
 
+---
 ## **Parts List**
 
 **Input shaft**  
@@ -46,6 +48,7 @@ The bearings minimize the friction between moving parts.
 **Gear shift (sub-assembly)**  
 Shift lever and rods connecting the shift forks/synchronizer sleeves to the driver, controls which gears are engaged. 
 
+---
 ## **Kinematic Breakdown – 6 Gear Transmission**
 
 **Motion Path (Power Flow)**  
@@ -84,6 +87,7 @@ Neutral: No gear is engaged with the output shaft; input and countershaft may ro
 
 Only one gear is engaged at a time. Shifting occurs by disengaging the current gear and engaging the next gear in sequence.
 
+---
 ## **Preliminary Failure Mode Review**
 
 **Possible Failures:**  
@@ -102,12 +106,14 @@ Possible Structural Deflection due to Heavy Gears on Shafts: Check kinematics of
 **Possible Solutions to These Issues:**  
 To address most of these issues, we will test multiple iterations of the transmission via different gear ratios and different sizes of critical components to find the perfect balance that will mitigate these failures.
 
+---
 ## **Transmission Diagram**
 <div align="center">
   <img src="../images/Manual Transmission System.png">
   <p><em>Figure 3. Diagram of the full transmission build with all the critical components.</em></p>
 </div>
 
+---
 ## **Critical Components**
 
 Components where design purposes are especially important:
@@ -121,6 +127,7 @@ Components where design purposes are especially important:
   <p><em>Figure 4. Exploded view of a synchronizer.</em></p>
 </div>
 
+---
 ## **Critical Design Parameters**
 * 5 forward gears + 1 reverse gear
 * PETG material will be used to model transmission
@@ -137,7 +144,8 @@ Components where design purposes are especially important:
 * Clearances TBD
 * Distance between gears 30 mm
 * Distance between input/output Shaft 60 mm
-  
+
+---
 ## **References**
 https://californiamotorsports.net/pages/porsche-901-transaxle-specification  
 https://www.artofmanliness.com/skills/manly-know-how/gearhead-101-understanding-manual-transmission/  
