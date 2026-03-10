@@ -1,8 +1,8 @@
 <h1 align="center">Shift Happens</h1>
 
-<p align="center">
-  <img src="images/TeamLogo.png" width="400">
-</p>
+<div align="center">
+  <img src="images/TeamLogo.png">
+</div>
 
 ## Content
 * [CAD](cad)
@@ -15,3 +15,4 @@
 
 ## Phase Reports
 * [Phase 1](phase1/phase1.md)
+* [Phase 2](phase2/phase2.md)
