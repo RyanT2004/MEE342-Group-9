@@ -69,21 +69,23 @@ Global Safety Overview
   
 | Parts | Images |
 |:----------|:--------|
-| **Shaft Ring** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Shaft** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Synchronizer** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Synchronizer Coupler** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Shifter** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Shift Box** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Housing** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Mesh Gears** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Gear Coupler** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Fork Coupler** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Shift Cradler Shaft** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Input Helical Gears** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
-| **Output Helical Gears** |  <img src="../images/FULL_ASSEMBLY_WH_SIDE.PNG" width="200"> |
+| **Shaft Ring** |  <img src="../images/ShaftRing.PNG" width="600"> |
+| **Shaft** |  <img src="../images/Shaft.PNG" width="600"> |
+| **Synchronizer** |  <img src="../images/synchro.PNG" width="600"> |
+| **Synchronizer Coupler** |  <img src="../images/SynchroCoupler.PNG" width="600"> |
+| **Shifter** |  <img src="../images/Shifter.PNG" width="600"> |
+| **Shift Box** |  <img src="../images/ShiftBox.PNG" width="600"> |
+| **Housing** |  <img src="../images/Housing_Test.PNG" width="600"> |
+| **Mesh Gears** |  <img src="../images/GearMesh.PNG" width="600"> |
+| **Gear Coupler** |  <img src="../images/GearCoupler.PNG" width="600"> |
+| **Fork Coupler** |  <img src="../images/Fork_Coupler.PNG" width="600"> |
+| **Shift Cradler Shaft** |  <img src="../images/Shift_Cradle_Generic.PNG" width="600"> |
+| **Input Helical Gears** |  <img src="../images/6th_Input_Updated.PNG" width="600"> |
+| **Output Helical Gears** |  <img src="../images/6th_Updated_Output.PNG" width="600"> |
   
 </div>
+
+> The 6th gear pair were used for the input and output gear images above, but each gear pair for each speed is a different tooth count and size. The image above only gives a reference as to what each one look like as all look very similar to the image given.
 
 From the part list above, separate assemblies were made before all were combined to create the full transmission model. This method allowed us to integrate each component of the system more efficiently with less room for problems as well. Below are the documentation of the assemblies made that were then used in the full model design.
 
