@@ -67,9 +67,9 @@ Global Safety Overview
 <div align="center">
 
   
-| Parts | Images |
-|:----------|:--------|
-| **Shaft Ring** |  <img src="../images/ShaftRing.PNG" width="600"> |
+| Parts | Images | Part Drawing |
+|:-------|:-------|:-------|
+| **Shaft Ring** |  <img src="../images/ShaftRing.PNG" width="600"> | <img src="../analysis/Part Drawing PDF's/ShaftRing_Drawing.pdf" width="600"> |
 | **Shaft** |  <img src="../images/Shaft.PNG" width="600"> |
 | **Synchronizer** |  <img src="../images/synchro.PNG" width="600"> |
 | **Synchronizer Coupler** |  <img src="../images/SynchroCoupler.PNG" width="600"> |
