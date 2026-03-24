@@ -86,7 +86,7 @@ m = module = 2.5 (m)
   
 d = m * N = 32 * 2.5 = 80 m
 
-  V = $\frac{π* d * n}{60}$ = $\frac{π* 80 *2375}{60}$ = 9948 m/s
+V = $\frac{π* d * n}{60}$ = $\frac{π* 80 *2375}{60}$ = 9948 m/s
 </div>
 
 **Gear Tooth Loading**
@@ -193,6 +193,11 @@ Parts/Assemblies Used in Input Shaft Assembly:
 The transmission model created is similar to the real world designs with a few adjustments due to some lack of knowledge and materials. Despite that, the system will act as an actual transmission with all key components designed and optimized for our half-model. While building the model, the biggest concern was the distance between all the components, especially the gear pairs. Having improper distancing can lead to a multitude of design failures, the one that was most concerning was possible seizing of gears. This would create unintended motions between the gears which could possibly affect the rotational direction. The solution that was used was to mitigate this as well as other possible system failures was to test multiple iterations of the transmission. These iterations would have different gear ratios and critical design components in order to find the perfect balance between all of the parts. These dimensions would also be used to calculate different engineering analysis which would also help determine the final dimensions used in the transmission.  
   
 After finalizing every part, all that was left was to design them in SolidWorks and put it all together in an assembly build to visualize the final product. The most efficient method of combining all the parts of the system together was to create smaller subs assemblies of the system and then adding those assemblies into the final full assembly. This was done for the synchronizer, input shaft, and output shaft. These components were selected as the sub assemblies since they were the main complex components that could prove to be an issue if done improperly. Doing these in parts will mitigate any problems when it comes to mating all our parts since we could easily figure out where a problem could occur and troubleshoot. The final design after compiling all the components shows the intended motion and idea of how a manual transmission would work.
+
+<div align="center">
+  <img src="../images/ExplodedView.gif">
+  <p><em>Figure 8. Transmission Exploded View.</em></p>
+</div>
 
 **3D Printing Design Discussion:**  
 While creating all the parts in SolidWorks, we were already accounting for how the parts could be printed when it was time to create the physical model. Each part was specifically designed so that the printer would have no issues printing out each part taking into account how a 3D printer works. There is also the chance that the part created will be slightly smaller than the dimensions listed in the print file which also proved to not be an issue due to the error range that was determined when looking through the dimensions. The only part that could have been an issue was the housing to hold all the critical components since it was significantly bigger than the size of the printer area. The solution to this was to split the housing into two sections and print each section out individually. The two sections can then be combined using any binding agent and it will then be used to store everything.
