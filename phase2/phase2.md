@@ -69,19 +69,19 @@ Global Safety Overview
   
 | Parts | Images | Part Drawing |
 |:-------|:-------|:-------|
-| **Shaft Ring** |  <img src="../images/ShaftRing.PNG" width="600"> | <img src="../analysis/Part Drawing PDF's/ShaftRing_Drawing.pdf" width="600"> |
-| **Shaft** |  <img src="../images/Shaft.PNG" width="600"> |
-| **Synchronizer** |  <img src="../images/synchro.PNG" width="600"> |
-| **Synchronizer Coupler** |  <img src="../images/SynchroCoupler.PNG" width="600"> |
-| **Shifter** |  <img src="../images/Shifter.PNG" width="600"> |
-| **Shift Box** |  <img src="../images/ShiftBox.PNG" width="600"> |
-| **Housing** |  <img src="../images/Housing_Test.PNG" width="600"> |
-| **Mesh Gears** |  <img src="../images/GearMesh.PNG" width="600"> |
-| **Gear Coupler** |  <img src="../images/GearCoupler.PNG" width="600"> |
-| **Fork Coupler** |  <img src="../images/Fork_Coupler.PNG" width="600"> |
-| **Shift Cradler Shaft** |  <img src="../images/Shift_Cradle_Generic.PNG" width="600"> |
-| **Input Helical Gears** |  <img src="../images/6th_Input_Updated.PNG" width="600"> |
-| **Output Helical Gears** |  <img src="../images/6th_Updated_Output.PNG" width="600"> |
+| **Shaft Ring** |  <img src="../images/ShaftRing.PNG" width="600"> | <img src="../images/Transmission Part Drawings/ShaftRing_Drawing.PNG" width="900"> |
+| **Shaft** |  <img src="../images/Shaft.PNG" width="600"> | <img src="../images/Transmission Part Drawings/Shaft_Drawing.PNG" width="900"> |
+| **Synchronizer** |  <img src="../images/synchro.PNG" width="600"> | <img src="../images/Transmission Part Drawings/synchro_Drawing.PNG" width="900"> |
+| **Synchronizer Coupler** |  <img src="../images/SynchroCoupler.PNG" width="600"> | <img src="../images/Transmission Part Drawings/SynchroCoupler_Drawing.PNG" width="900"> |
+| **Shifter** |  <img src="../images/Shifter.PNG" width="600"> | <img src="../images/Transmission Part Drawings/Shifter_Drawing.PNG" width="900"> |
+| **Shift Box** |  <img src="../images/ShiftBox.PNG" width="600"> | <img src="../images/Transmission Part Drawings/ShiftBox_Drawing.PNG" width="900"> |
+| **Housing** |  <img src="../images/Housing_Test.PNG" width="600"> | <img src="../images/Transmission Part Drawings/Housing Drawing.PNG" width="900"> |
+| **Mesh Gears** |  <img src="../images/GearMesh.PNG" width="600"> | <img src="../images/Transmission Part Drawings/gearMesh_Drawing.PNG" width="900"> |
+| **Gear Coupler** |  <img src="../images/GearCoupler.PNG" width="600"> | <img src="../images/Transmission Part Drawings/GearCoupler_Drawing.PNG" width="900"> |
+| **Fork Coupler** |  <img src="../images/Fork_Coupler.PNG" width="600"> |<img src="../images/Transmission Part Drawings/Fork_Coupler_Drawing.PNG" width="900"> |
+| **Shift Cradler Shaft** |  <img src="../images/Shift_Cradle_Generic.PNG" width="600"> | <img src="../images/Transmission Part Drawings/ShaftRing_Drawing.PNG" width="900"> |
+| **Input Helical Gears** |  <img src="../images/6th_Input_Updated.PNG" width="600"> | 
+| **Output Helical Gears** |  <img src="../images/6th_Updated_Output.PNG" width="600"> | 
   
 </div>
 
