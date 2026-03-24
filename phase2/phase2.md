@@ -53,12 +53,15 @@ We performed a static stress analysis focusing on the transmission’s response 
 
 NGO = number of teeth on output gear  
 NGI = number of teeth on input gear  
-eff = efficiency factor (assumed to be 100%)
+
+<!--
+eff = efficiency factor (assumed to be 100%)  
 T<sub>initial</sub> = initial torque from the input rod (1500 N.m)
+
 
 <div align="center">
   
-Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff
+Output Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff
   
 Torque on 1st gear = 1500 * $\frac{20}{50}$ * 1 = 600 N.m
 
@@ -71,6 +74,19 @@ Torque on 4th gear = 1500 * $\frac{34}{36}$ * 1 = 1416 N.m
 Torque on 5th gear = 1500 * $\frac{35}{35}$ * 1 = 1500 N.m 
 
 Torque on 6th gear = 1500 * $\frac{38}{32}$ * 1 = 1781 N.m
+</div>
+-->
+
+<div align="center">
+  
+| Gear Pair | Input Teeth (NGI) | Output Teeth (NGO) | Input Diamter [mm] | Output Diameter [mm] |
+|:-------|:-------|:-------|:-------|:-------|
+| **Gear 1** | 50 | 20 | 181.78 | 75.71 |
+| **Gear 2** | 42 | 28 | 153.49 | 103.99 |
+| **Gear 3** | 38 | 32 | 139.35 | 118.14 |
+| **Gear 4** | 36 | 34 | 132.28 | 125.21 |
+| **Gear 5** | 35 | 35 | 128.74 | 128.74 |
+| **Gear 6** | 32 | 38 | 118.14 | 139.35 |
 </div>
 
 **Fatigue Assessment**
@@ -114,6 +130,23 @@ The bearing load check was performed to determine the reaction forces generated 
 **Global Safety Overview**
 
 In conclusion, the Shift Happens transmission design successfully balances high performance with structural safety. By integrating a 6-speed gear range with ratios from 0.4 to 1.1875, we achieved the necessary output torque of 1781.25 N.m while maintaining a compact form factor. Every component, from the 2.5 mm module gears to the optimized 20 mm shafts, was verified through both analytical AGMA formulas and fatigue assessments. This multi-layered analysis confirms that the final assembly is not only capable of meeting the project's torque requirements but is also durable enough for long-term functional use in a prototype environment.
+
+eff = efficiency factor (assumed to be 100%)  
+T<sub>initial</sub> = initial torque from the input rod (1500 N.m)  
+
+<div align="center">
+  
+**Output Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff**
+  
+| Gear Pair | Ratio (G) | Output Torque [N*m] |
+|:-------|:-------|:-------|
+| **Gear 1** |  0.4 | 600 |
+| **Gear 2** |  0.667| 1000 |
+| **Gear 3** |  0.8421 | 1263.16 |
+| **Gear 4** |  0.9444 | 1416.67 |
+| **Gear 5** |  1.0 | 1500 |
+| **Gear 6** |  1.1875 | 1781.25 |
+</div>
 
 > These are not all of our calculations, the rest is located in the analysis folder. The calculations given here gives an idea of what we solved for and how each part relates to another portion of the system.
 
