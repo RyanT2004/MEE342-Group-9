@@ -1,4 +1,4 @@
-## **Final Design Overview**
+## **Final Design Overview & Model Explanation**
 ---
 <div align="center">
   <img src="../images/FULL_ASSEMBLY_WH_ISO_2.PNG">
@@ -19,6 +19,10 @@
   <img src="../images/FULL_ASSEMBLY_WH_TOP.PNG">
   <p><em>Figure 4. Full Model Top View.</em></p>
 </div>
+
+<br>
+
+In the model created in SolidWorks, the input gear spins the output gear that is fixed to the other shaft, creating the desired output torque. Its important to note that these gears are isolated cases since its not depicted well in SolidWorks due to mating capabilities. Another important aspect to note is the 5th and 6th gear synchros must be moved as the input rotation cannot be on both sides of the transmission. The synchro locks into the selected gear setting using the gear shifter. The inner ring of the synchro is always moving with the shaft. In the assembly, all gears are free floating on the shaft until its mated to be locked to the synchro using mates and constraints.
 
 ---
 ## **Major Design Decisions & Changes**
@@ -100,14 +104,23 @@ m = module = 2.5 (m)
 
 <div align="center">
   
-d = m * N = 32 * 2.5 = 80 m
+#### d = m * N = 32 * 2.5 = 80 m
 
-V = $\frac{π* d * n}{60}$ = $\frac{π* 80 *2375}{60}$ = 9948 m/s
+#### V = $\frac{π* d * n}{60}$ = $\frac{π* 80 *2375}{60}$ = 9948 m/s
 </div>
 
 **Gear Tooth Loading**
 
 For the gear tooth loading section, we utilized AGMA standards with a focus on the Gear 6 assembly, which handles the highest output torque. The gears were designed with a 2.5 mm module, a 14.5° pressure angle, and a 25 mm face width. We calculated a dynamic factor (Kv) of 1.741 to account for the mesh speeds and quality of the gear teeth. Using these parameters, the AGMA bending stress was calculated to be well within safe limits, indicating that the teeth are sized appropriately to prevent root breakage or surface pitting while maintaining the fixed 125 mm center distance required for the housing.
+
+<div align="center">
+  
+<img src="../analysis/Calculation Images/AGMA Standards Calculations.png" width="45%"> 
+<img src="../analysis/Calculation Images/AGMA Standards Calculations 2.png" width="49%">
+<img src="../analysis/Calculation Images/AGMA Geometry Factor for Bending.png" width="49%">
+</div>
+
+<br>
 
 **Interface Stresses**
 
@@ -118,9 +131,9 @@ P = power = 1000 (Watts)
 
 <div align="center">
   
-ω = $\frac{2 * π * n}{60}$ = 248.7 rad/s
+#### ω = $\frac{2 * π * n}{60}$ = 248.7 rad/s
 
-Operating Torque = $\frac{P}{ω}$ = $\frac{1000}{248.7}$ = 40.31 N.m
+#### Operating Torque = $\frac{P}{ω}$ = $\frac{1000}{248.7}$ = 40.31 N.m
 </div>
 
 **Bearing Load Check**
@@ -136,8 +149,10 @@ T<sub>initial</sub> = initial torque from the input rod (1500 N.m)
 
 <div align="center">
   
-**Output Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff**
-  
+#### **Output Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff**
+
+<br>
+ 
 | Gear Pair | Ratio (G) | Output Torque [N*m] |
 |:-------|:-------|:-------|
 | **Gear 1** |  0.4 | 600 |
@@ -148,7 +163,9 @@ T<sub>initial</sub> = initial torque from the input rod (1500 N.m)
 | **Gear 6** |  1.1875 | 1781.25 |
 </div>
 
-> These are not all of our calculations, the rest is located in the analysis folder. The calculations given here gives an idea of what we solved for and how each part relates to another portion of the system.
+<br>
+
+> These are NOT all of our calculations, the rest is located in the analysis folder. The calculations given here gives an idea of what we parts we solved for and how each part relates to another variable of the whole transmission system analysis.
 
 ---
 ## **Design For Assembly and 3D Printing Discussion**
@@ -158,17 +175,17 @@ T<sub>initial</sub> = initial torque from the input rod (1500 N.m)
   
 | Parts | Images | Part Drawing |
 |:-------|:-------|:-------|
-| **Shaft Ring** |  <img src="../images/ShaftRing.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/ShaftRing_Drawing.png" width="900"> |
-| **Shaft** |  <img src="../images/Shaft.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/Shaft_Drawing.png" width="900"> |
-| **Synchronizer** |  <img src="../images/synchro.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/synchro_Drawing.png" width="900"> |
-| **Synchronizer Coupler** |  <img src="../images/SynchroCoupler.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/SynchroCoupler_Drawing.png" width="900"> |
-| **Shifter** |  <img src="../images/Shifter.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/Shifter_Drawing.png" width="900"> |
-| **Shift Box** |  <img src="../images/ShiftBox.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/ShiftBox_Drawing.png" width="900"> |
-| **Housing** |  <img src="../images/Housing_Test.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/Housing Drawing.png" width="900"> |
-| **Mesh Gears** |  <img src="../images/GearMesh.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/gearMesh_Drawing.png" width="900"> |
-| **Gear Coupler** |  <img src="../images/GearCoupler.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/GearCoupler_Drawing.png" width="900"> |
-| **Fork Coupler** |  <img src="../images/Fork_Coupler.PNG" width="600"> |<img src="../images/Transmission Part Drawings PNG/Fork_Coupler_Drawing.png" width="900"> |
-| **Shift Cradler Shaft** |  <img src="../images/Shift_Cradle_Generic.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/Shaft_Cradle_Generic_Drawing.png" width="900"> |
+| **Shaft Ring** |  <img src="../images/ShaftRing.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/ShaftRing_Drawing.png" width="700"> |
+| **Shaft** |  <img src="../images/Shaft.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/Shaft_Drawing.png" width="700"> |
+| **Synchronizer** |  <img src="../images/synchro.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/synchro_Drawing.png" width="700"> |
+| **Synchronizer Coupler** |  <img src="../images/SynchroCoupler.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/SynchroCoupler_Drawing.png" width="700"> |
+| **Shifter** |  <img src="../images/Shifter.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/Shifter_Drawing.png" width="700"> |
+| **Shift Box** |  <img src="../images/ShiftBox.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/ShiftBox_Drawing.png" width="700"> |
+| **Housing** |  <img src="../images/Housing_Test.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/Housing Drawing.png" width="700"> |
+| **Mesh Gears** |  <img src="../images/GearMesh.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/gearMesh_Drawing.png" width="700"> |
+| **Gear Coupler** |  <img src="../images/GearCoupler.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/GearCoupler_Drawing.png" width="700"> |
+| **Fork Coupler** |  <img src="../images/Fork_Coupler.PNG" width="600"> |<img src="../images/Transmission Part Drawings PNG/Fork_Coupler_Drawing.png" width="700"> |
+| **Shift Cradler Shaft** |  <img src="../images/Shift_Cradle_Generic.PNG" width="600"> | <img src="../images/Transmission Part Drawings PNG/Shaft_Cradle_Generic_Drawing.png" width="700"> |
 | **Input Helical Gears** |  <img src="../images/6th_Input_Updated.PNG" width="600"> | 
 | **Output Helical Gears** |  <img src="../images/6th_Updated_Output.PNG" width="600"> | 
   
