@@ -22,7 +22,7 @@
 
 <br>
 
-In the model created in SolidWorks, the input gear spins the output gear that is fixed to the other shaft, creating the desired output torque. Its important to note that these gears are isolated cases since its not depicted well in SolidWorks due to mating capabilities. Another important aspect to note is the 5th and 6th gear synchros must be moved as the input rotation cannot be on both sides of the transmission. The synchro locks into the selected gear setting using the gear shifter. The inner ring of the synchro is always moving with the shaft. In the assembly, all gears are free floating on the shaft until its mated to be locked to the synchro using mates and constraints.
+In the model created in SolidWorks, the input gear spins the output gear that is fixed to the other shaft, creating the desired output torque. Its important to note that these gears are isolated cases since its not depicted well in SolidWorks due to mating capabilities. How it works is that the synchro locks into the selected gear setting using the gear shifter and the inner ring of the synchro is always moving with the shaft. In the assembly, all gears are free floating on the shaft until its mated to be locked to the synchro using mates and constraints.
 
 ---
 ## **Major Design Decisions & Changes**
@@ -264,3 +264,13 @@ Some anticipated risks that could be seen when prototyping is:
 * **Structural failure specifically in the shafts of the transmission:**
   - After doing the calculations and running some analyses, it was determined that structure should be able to with stand the stresses and torque applied to it but when it comes time to assemble the parts for the prototype, it could be a different story.
 
+---
+
+## **References**
+* Brain, Marshall. “How Gear Ratios Work.” HowStuffWorks, 20 Oct. 2023, science.howstuffworks.com/transport/engines-equipment/gear-ratio.htm. 
+
+* CarTechBooks. “Manual Transmissions Explained.” CarTechBooks, 26 May 2015, www.cartechbooks.com/blogs/techtips/manual-transmissions-explained.   
+
+* Hufford, Kelly. “How Manual Transmission Are Manufactured and Tested.” Transpartswarehouse.com, Transparts Warehouse Inc, 30 Apr. 2024, transpartswarehouse.com/blog/post/how-manual-transmission-are-manufactured-and-tested.
+* https://gearsolutions.com/features/determination-of-the-agma-j-factor-for-internal-spur-gears/
+* https://www.engineersedge.com/calculators/agma_gear_tooth_bending_stress_15856.htm
