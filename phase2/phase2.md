@@ -48,7 +48,7 @@ This was determined through estimations of calculations and analysis and after f
 
 This was changed after doing more research on how real world transmission gear pair distances were established. These distances would lower the chances of gears not meshing or possible misalignment in the system.
 
----
+
 # **Detailed Explanation Of Analyses**
 
 ## <ins>**Static Stress and Factor of Safety**</ins>
@@ -70,7 +70,7 @@ NGI = number of teeth on input gear
 | **Gear 6** | 32 | 38 | 118.14 | 139.35 |
 </div>
 
-**6th Gear Input / 1st Gear Output - Shaft Bending With Spur Gear** 
+### **6th Gear Input / 1st Gear Output - Shaft Bending With Spur Gear** 
 
 $T = 500 \ \text{N·m}$
 
@@ -80,13 +80,17 @@ $\theta_t : \text{Transverse Pressure Angle}$
 
 <div align="center">
   
-$W_r = W_t \cdot \tan(\theta_t)$
-
 $W_t = \dfrac{2 \cdot T}{d}$
 
 $W_t = 12500 \ \text{N}$
 
+<br>
+
+$W_r = W_t \cdot \tan(\theta_t)$
+
 $W_r = 4391 \ \text{N}$
+
+<br>
 
 $W_{\text{total}} = 13248.807 \ \text{N}$
 
@@ -111,7 +115,7 @@ $$\sigma_{vm} = 618.54 \ \text{MPa}$$
 
 ------------------------------------------------------------------------
 
-**6th Gear Input / 1st Gear Output - Shaft Bending**
+### **6th Gear Input / 1st Gear Output - Shaft Bending**
 
 $\phi_h : \text{Helix angle = 42.592}$
 
@@ -123,7 +127,7 @@ $W_a = 11491 \ \text{N}$
 
 <br>
 
-$\sigma_b = \dfrac{32 \cdot M}{\pi d^3} = \dfrac{32 \cdot 418849}{\pi \cdot (20)^3} = 533.3 \ \text{MPa}$
+$\sigma_b = \dfrac{32 \cdot M}{\pi d^3} = \dfrac{32 \cdot 418.849}{\pi \cdot (20)^3} = 533.3 \ \text{MPa}$
 
 $\sigma_a = \dfrac{W_a}{A} = \dfrac{11491}{\pi(0.01)^2} = 36.6 \ \text{MPa}$
 
@@ -135,6 +139,10 @@ $\sigma_{vm} = \sqrt{569.9^2 + 3(318.3)^2} = 762.9 \ \text{MPa}$
 
 </div>
 
+<br>
+
+**Repeating this process for the other 5 pairs of gears since all the calculations will run a similar format just like the one shown above, all the critical data values were calculated and shown below in the table.**
+
 | Gear | Distance from Bearing $(x)$ | Max Bending Moment $(M_R)$ | Bending Stress $(\sigma_b)$ | Axial Stress $(\sigma_a)$ | Normal Stress $(\sigma_x)$ | Von Mises Stress $(\sigma_{vm})$ |
 |:-------|:-------|:-------|:-------|:-------|:-------|:-------|
 | **1st** |  17.5 mm | 501.348 N.m | 638.3 MPa | 23.4 MPa | 661.7 MPa | 861.3 MPa |
@@ -145,11 +153,9 @@ $\sigma_{vm} = \sqrt{569.9^2 + 3(318.3)^2} = 762.9 \ \text{MPa}$
 | **6th** |  332.5 mm | 418.849 N.m | 533.3 MPa | 36.6 MPa | 569.9 MPa | 762.9 MPa |
 
 
-------------------------------------------------------------------------
-
 ## <ins>**Fatigue Assessment**</ins>
 
-The fatigue assessment was conducted to ensure the transmission's reliability over its full service life, assuming a standard engine speed of 2000 RPM. Because the input and output shafts rotate under load, they are subject to cyclic stress that can lead to crack initiation. We applied the Modified Goodman Criterion to these components, focusing on the points where the shaft diameter transitions to 20 mm. By confirming that our operating stresses remain well below the endurance limit of the material, we ensure the transmission can withstand millions of cycles without fatigue failure, even at high-speed operation where the pitch line velocity reaches approximately 9.948 m/s.
+The fatigue assessment was conducted to ensure the transmission's reliability over its full service life, scaling the engine speed to appropriately match the model which is a speed of 667 RPM. Because the input and output shafts rotate under load, they are subject to cyclic stress that can lead to crack initiation. We applied the Modified Goodman Criterion to these components, focusing on the points where the shaft diameter transitions to 20 mm. By confirming that our operating stresses remain well below the endurance limit of the material, we ensure the transmission can withstand millions of cycles without fatigue failure, even at high-speed operation where the pitch line velocity reaches approximately 9.948 m/s.
 
 d = pitch diameter (mm)  
 n = pinion speed (rpm) = 2375  
@@ -158,22 +164,22 @@ m = module = 2.5 (mm)
 
 <div align="center">
   
-#### d = m * N = 32 * 2.5 = 80 mm
+ d = m * N = 32 * 2.5 = 80 mm
 
-#### V = $\frac{π* d * n}{60 * 1000}$ = $\frac{π* 80 *2375}{60 * 1000}$ = 9.948 m/s
+ V = $\frac{π* d * n}{60 * 1000}$ = $\frac{π* 80 *2375}{60 * 1000}$ = 9.948 m/s
 </div>
 
 ## <ins>**Gear Tooth Loading - Calculations for AGMA Standards**</ins>
 
 For the gear tooth loading section, we utilized AGMA standards with a focus on the Gear 6 assembly, which handles the highest output torque. The gears were designed with a 2.5 mm module, a 14.5° pressure angle, and a 25 mm face width. We calculated a dynamic factor (Kv) of 1.741 to account for the mesh speeds and quality of the gear teeth. Using these parameters, the AGMA bending stress was calculated to be well within safe limits, indicating that the teeth are sized appropriately to prevent root breakage or surface pitting while maintaining the fixed 125 mm center distance required for the housing.
 
-**AGMA Contact Stress Calculation ("Pitting Resistance")**
+### AGMA Contact Stress Calculation ("Pitting Resistance")
 
 $$
 \sigma_c = C_p \sqrt{ W_t K_o K_v K_s \left( \frac{K_m}{d F} \right) \left( \frac{C_f}{I} \right) }
 $$
 
-**Where:**
+Where:
 - $C_p$ = Elastic coefficient (material properties)  
 - $I$ = Geometry factor for pitting resistance (function of tooth curvature)  
 - $C_f$ = Surface condition factor  
@@ -182,7 +188,7 @@ $$
 
 ### Allowable Stress / Strength and Durability
 
-#### Bending Strength
+Bending Strength
 
 $$
 \sigma_F \leq \frac{S_t K_L}{K_T K_R}
@@ -192,9 +198,9 @@ $$
 
 ### Fundamentally
 
-#### Stress Equations
+Stress Equations
 
-##### Bending Stress ($\sigma_b$)
+ Bending Stress ($\sigma_b$)
 
 Measures the risk of tooth breakage:
 
@@ -204,12 +210,12 @@ $$
 
 ---
 
-#### Contact Stress ($\sigma_c$)
+### Contact Stress ($\sigma_c$)
 
 Measures the risk of surface pitting:
 
 $$
-\sigma_c = C_p \sqrt{ \frac{W_t K_o K_v K_s K_m C_f}{d F I} }
+\sigma_c = C_p \sqrt{ \frac{W_t K_o K_v K_s K_m C_f}{d F J} }
 $$
 
 ---
@@ -218,24 +224,24 @@ $$
 
 - Helix angle at the reference diameter cannot exceed $50^\circ$
 - Transverse contact ratio must be between $1.0$ and $2.0$
-- Gears must be undamagedd
+- Gears must be undamaged
 
-**Helical Gear Geometry + AGMA Calculations**
+---
 
 ### Helical Gear Geometry
 
-- **Normal module** ($m_n$) → Defines tooth size  
-- **Normal diametral pitch** ($P_n$)
+- Normal module ($m_n$) → Defines tooth size  
+- Normal diametral pitch ($P_n$) → Also defines tooth size  
 
-- **Helix angle** ($\beta$)  
+- Helix angle ($\beta$)  
   - Typically ranges from $15^\circ$ to $30^\circ$
 
-- **Normal pressure angle** ($\phi_n$)  
+- Normal pressure angle ($\phi_n$)  
   - Commonly $20^\circ$
 
 ---
 
-#### Transverse Pressure Angle
+### Transverse Pressure Angle
 
 $$
 \tan(\phi_t) = \frac{\tan(\phi_n)}{\cos(\beta)}
@@ -243,7 +249,7 @@ $$
 
 ---
 
-#### Pitch Diameter
+### Pitch Diameter
 
 $$
 d = \frac{z m_n}{\cos(\beta)}
@@ -251,7 +257,7 @@ $$
 
 ---
 
-#### Center Distance
+### Center Distance
 
 $$
 a = \frac{d_p + d_g}{2} = \frac{m_n (z_p + z_g)}{2 \cos(\beta)}
@@ -259,7 +265,7 @@ $$
 
 ---
 
-#### Face Width
+### Face Width
 
 $$
 F \geq 3 p_x
@@ -276,7 +282,7 @@ $$
 
 ---
 
-#### Transmitted Load
+### Transmitted Load
 
 $$
 W_t = \frac{2T}{d_p}
@@ -290,10 +296,10 @@ Where:
 
 ### Factors
 
-- **Dynamic factor** ($K_v$) → velocity & gear quality  
-- **Overload factor** ($K_o$) → shock loading  
-- **Size factor** ($K_s$) → material non-uniformity  
-- **Load distribution factor** ($K_m$) → load across face width  
+- Dynamic factor ($K_v$) → velocity & gear quality  
+- Overload factor ($K_o$) → shock loading  
+- Size factor ($K_s$) → material non-uniformity  
+- Load distribution factor ($K_m$) → load across face width  
 
 ---
 
@@ -303,39 +309,11 @@ $$
 \sigma_F = W_t K_o K_v K_s \left( \frac{1}{F m_n} \right) \left( \frac{K_m K_B}{J} \right)
 $$
 
-**Where:**
+Where:
 - $J$ = AGMA geometry factor (tooth form & stress concentration)  
 - $K_B$ = Rim thickness factor (≈ 1 for solid gear blank)
+
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<div align="center">
-  
-<img src="../analysis/Calculation Images/AGMA Standards Calculations.png" width="45%"> 
-<img src="../analysis/Calculation Images/AGMA Standards Calculations 2.png" width="49%">
-<img src="../analysis/Calculation Images/AGMA Geometry Factor for Bending.png" width="49%">
-</div>
--->
 <br>
 
 # <ins>**Interface Stresses**</ins>
