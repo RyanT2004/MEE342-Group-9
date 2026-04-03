@@ -218,7 +218,7 @@ $$
 
 - Helix angle at the reference diameter cannot exceed $50^\circ$
 - Transverse contact ratio must be between $1.0$ and $2.0$
-- Gears must be undamaged
+- Gears must be undamagedd
 
 **Helical Gear Geometry + AGMA Calculations**
 
