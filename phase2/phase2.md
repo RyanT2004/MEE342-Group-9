@@ -1,4 +1,4 @@
-## **Final Design Overview & Model Explanation**
+# **Final Design Overview & Model Explanation**
 ---
 <div align="center">
   <img src="../images/FULL_ASSEMBLY_WH_ISO_2.PNG">
@@ -25,7 +25,7 @@
 In the model created in SolidWorks, the input gear spins the output gear that is fixed to the other shaft, creating the desired output torque. Its important to note that these gears are isolated cases since its not depicted well in SolidWorks due to mating capabilities. How it works is that the synchro locks into the selected gear setting using the gear shifter and the inner ring of the synchro is always moving with the shaft. In the assembly, all gears are free floating on the shaft until its mated to be locked to the synchro using mates and constraints.
 
 ---
-## **Major Design Decisions & Changes**
+# **Major Design Decisions & Changes**
 
 **Adjusted gear ratios so that each pair had the same total tooth count (70 tooth total for each pair):**   
 The ratios were changed so that it would help with gear meshing in the transmission system while also keeping proper torque and output speeds with each respective gear pair.
@@ -49,41 +49,18 @@ This was determined through estimations of calculations and analysis and after f
 This was changed after doing more research on how real world transmission gear pair distances were established. These distances would lower the chances of gears not meshing or possible misalignment in the system.
 
 ---
-## **Detailed Explanation Of Analyses**
+# **Detailed Explanation Of Analyses**
 
-**Static Stress and Factor of Safety**
+## <ins>**Static Stress and Factor of Safety**</ins>
 
-We performed a static stress analysis focusing on the transmission’s response to a peak input torque of 1500 N.m. Our analysis tracked the torque multiplication across all six gear pairs, reaching a maximum output of 1781.25 N.m in the sixth gear. By applying these loads to our 20 mm shafts, we evaluated the bending and torsional stresses against the material's yield strength. This high-torque scenario represents our primary safety constraint, and the results confirm that the shaft geometry and material selection provide a robust factor of safety, preventing permanent deformation during sudden gear shifts or heavy acceleration.
+We performed a static stress analysis focusing on the transmission’s response to a peak input torque of 500 N.m. Our analysis tracked the torque multiplication across all six gear pairs, reaching a maximum output of 593.75 N.m in the sixth gear. By applying these loads to our 20 mm shafts, we evaluated the bending and torsional stresses against the material's yield strength. This high-torque scenario represents our primary safety constraint, and the results confirm that the shaft geometry and material selection provide a robust factor of safety, preventing permanent deformation during sudden gear shifts or heavy acceleration.
 
 NGO = number of teeth on output gear  
 NGI = number of teeth on input gear  
 
-<!--
-eff = efficiency factor (assumed to be 100%)  
-T<sub>initial</sub> = initial torque from the input rod (1500 N.m)
-
-
 <div align="center">
   
-Output Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff
-  
-Torque on 1st gear = 1500 * $\frac{20}{50}$ * 1 = 600 N.m
-
-Torque on 2nd gear = 1500 * $\frac{28}{42}$ * 1 = 1000 N.m
-
-Torque on 3rd gear = 1500 * $\frac{32}{38}$ * 1 = 1263 N.m
-
-Torque on 4th gear = 1500 * $\frac{34}{36}$ * 1 = 1416 N.m 
-
-Torque on 5th gear = 1500 * $\frac{35}{35}$ * 1 = 1500 N.m 
-
-Torque on 6th gear = 1500 * $\frac{38}{32}$ * 1 = 1781 N.m
-</div>
--->
-
-<div align="center">
-  
-| Gear Pair | Input Teeth (NGI) | Output Teeth (NGO) | Input Diamter [mm] | Output Diameter [mm] |
+| Gear Pair | Input Teeth (NGI) | Output Teeth (NGO) | Input Diameter [mm] | Output Diameter [mm] |
 |:-------|:-------|:-------|:-------|:-------|
 | **Gear 1** | 50 | 20 | 181.78 | 75.71 |
 | **Gear 2** | 42 | 28 | 153.49 | 103.99 |
@@ -93,36 +70,275 @@ Torque on 6th gear = 1500 * $\frac{38}{32}$ * 1 = 1781 N.m
 | **Gear 6** | 32 | 38 | 118.14 | 139.35 |
 </div>
 
-**Fatigue Assessment**
+**6th Gear Input / 1st Gear Output - Shaft Bending With Spur Gear** 
 
-The fatigue assessment was conducted to ensure the transmission's reliability over its full service life, assuming a standard engine speed of 2000 RPM. Because the input and output shafts rotate under load, they are subject to cyclic stress that can lead to crack initiation. We applied the Modified Goodman Criterion to these components, focusing on the points where the shaft diameter transitions to 20 mm. By confirming that our operating stresses remain well below the endurance limit of the material, we ensure the transmission can withstand millions of cycles without fatigue failure, even at high-speed operation where the pitch line velocity reaches approximately 9948 m/s.
+$T = 500 \ \text{N·m}$
 
-d = pitch diameter (m)  
-n = pinion speed (rpm) = 2375  
-N = number of teeth of highest gear = 32  
-m = module = 2.5 (m)
+$d = 80 \ \text{mm} = \text{pitch diameter}$
+
+$\theta_t : \text{Transverse Pressure Angle}$
 
 <div align="center">
   
-#### d = m * N = 32 * 2.5 = 80 m
+$W_r = W_t \cdot \tan(\theta_t)$
 
-#### V = $\frac{π* d * n}{60}$ = $\frac{π* 80 *2375}{60}$ = 9948 m/s
+$W_t = \dfrac{2 \cdot T}{d}$
+
+$W_t = 12500 \ \text{N}$
+
+$W_r = 4391 \ \text{N}$
+
+$W_{\text{total}} = 13248.807 \ \text{N}$
+
+<br>
+
+$\tau = \dfrac{T \cdot c}{J}$
+
+$\tau = 318.3 \ \text{MPa}$
 </div>
 
-**Gear Tooth Loading**
+$R_2 = 12586.366 \ \text{N}$
+
+$R_1 = 662.441 \ \text{N}$
+
+$M_R = 220.2616 \ \text{N·m}$
+
+$$\sigma = \frac{M \cdot c}{I} + \frac{W_a}{A} = \frac{220.2616 \cdot 0.01}{\dfrac{\pi}{64}(0.02)^4} + \frac{11491}{\pi(0.01)^2} = 280.446 \cdot 10^6 + 36.577 \cdot 10^6 = 317.023 \ \text{MPa}$$
+
+$$\sigma_{vm} = \sqrt{\sigma^2 + 3\tau^2}$$
+
+$$\sigma_{vm} = 618.54 \ \text{MPa}$$
+
+------------------------------------------------------------------------
+
+**6th Gear Input / 1st Gear Output - Shaft Bending**
+
+$\phi_h : \text{Helix angle = 42.592}$
+
+<div align="center">
+  
+$W_a = W_t \cdot \tan(\phi_h)$
+
+$W_a = 11491 \ \text{N}$
+
+<br>
+
+$\sigma_b = \dfrac{32 \cdot M}{\pi d^3} = \dfrac{32 \cdot 418849}{\pi \cdot (20)^3} = 533.3 \ \text{MPa}$
+
+$\sigma_a = \dfrac{W_a}{A} = \dfrac{11491}{\pi(0.01)^2} = 36.6 \ \text{MPa}$
+
+$\tau = 318.3 \ \text{MPa}$
+
+$\sigma_x = \sigma_b + \sigma_a = 569.9 \ \text{MPa}$
+
+$\sigma_{vm} = \sqrt{569.9^2 + 3(318.3)^2} = 762.9 \ \text{MPa}$
+
+</div>
+
+| Gear | Distance from Bearing $(x)$ | Max Bending Moment $(M_R)$ | Bending Stress $(\sigma_b)$ | Axial Stress $(\sigma_a)$ | Normal Stress $(\sigma_x)$ | Von Mises Stress $(\sigma_{vm})$ |
+|:-------|:-------|:-------|:-------|:-------|:-------|:-------|
+| **1st** |  17.5 mm | 501.348 N.m | 638.3 MPa | 23.4 MPa | 661.7 MPa | 861.3 MPa |
+| **2nd** |  102.5 mm | 893.653 N.m | 1,137.8 MPa | 27.9 MPa | 1,165.7 MPa | 1,289.5 MPa |
+| **3rd** |  132.5 mm | 1,048.547 N.m | 1,335.1 MPa | 30.8 MPa | 1,365.9 MPa | 1,472.9 MPa |
+| **4th** |  217.5 mm | 1,040.397 N.m | 1,324.7 MPa | 32.5 MPa | 1,357.2 MPa | 1,464.9 MPa |
+| **5th** |  247.5 mm | 931.308 N.m | 1,185.8 MPa | 33.4 MPa | 1,219.2 MPa | 1,338.1 MPa |
+| **6th** |  332.5 mm | 418.849 N.m | 533.3 MPa | 36.6 MPa | 569.9 MPa | 762.9 MPa |
+
+
+------------------------------------------------------------------------
+
+## <ins>**Fatigue Assessment**</ins>
+
+The fatigue assessment was conducted to ensure the transmission's reliability over its full service life, assuming a standard engine speed of 2000 RPM. Because the input and output shafts rotate under load, they are subject to cyclic stress that can lead to crack initiation. We applied the Modified Goodman Criterion to these components, focusing on the points where the shaft diameter transitions to 20 mm. By confirming that our operating stresses remain well below the endurance limit of the material, we ensure the transmission can withstand millions of cycles without fatigue failure, even at high-speed operation where the pitch line velocity reaches approximately 9.948 m/s.
+
+d = pitch diameter (mm)  
+n = pinion speed (rpm) = 2375  
+N = number of teeth of highest gear = 32  
+m = module = 2.5 (mm)
+
+<div align="center">
+  
+#### d = m * N = 32 * 2.5 = 80 mm
+
+#### V = $\frac{π* d * n}{60 * 1000}$ = $\frac{π* 80 *2375}{60 * 1000}$ = 9.948 m/s
+</div>
+
+## <ins>**Gear Tooth Loading - Calculations for AGMA Standards**</ins>
 
 For the gear tooth loading section, we utilized AGMA standards with a focus on the Gear 6 assembly, which handles the highest output torque. The gears were designed with a 2.5 mm module, a 14.5° pressure angle, and a 25 mm face width. We calculated a dynamic factor (Kv) of 1.741 to account for the mesh speeds and quality of the gear teeth. Using these parameters, the AGMA bending stress was calculated to be well within safe limits, indicating that the teeth are sized appropriately to prevent root breakage or surface pitting while maintaining the fixed 125 mm center distance required for the housing.
 
+**AGMA Contact Stress Calculation ("Pitting Resistance")**
+
+$$
+\sigma_c = C_p \sqrt{ W_t K_o K_v K_s \left( \frac{K_m}{d F} \right) \left( \frac{C_f}{I} \right) }
+$$
+
+**Where:**
+- $C_p$ = Elastic coefficient (material properties)  
+- $I$ = Geometry factor for pitting resistance (function of tooth curvature)  
+- $C_f$ = Surface condition factor  
+
+---
+
+### Allowable Stress / Strength and Durability
+
+#### Bending Strength
+
+$$
+\sigma_F \leq \frac{S_t K_L}{K_T K_R}
+$$
+
+---
+
+### Fundamentally
+
+#### Stress Equations
+
+##### Bending Stress ($\sigma_b$)
+
+Measures the risk of tooth breakage:
+
+$$
+\sigma_b = \frac{W_t P_d}{F J} \cdot \frac{K_o K_m K_s}{K_v} \cdot K_B K_T
+$$
+
+---
+
+#### Contact Stress ($\sigma_c$)
+
+Measures the risk of surface pitting:
+
+$$
+\sigma_c = C_p \sqrt{ \frac{W_t K_o K_v K_s K_m C_f}{d F I} }
+$$
+
+---
+
+### Limitations of AGMA Standard
+
+- Helix angle at the reference diameter cannot exceed $50^\circ$
+- Transverse contact ratio must be between $1.0$ and $2.0$
+- Gears must be undamaged
+
+**Helical Gear Geometry + AGMA Calculations**
+
+### Helical Gear Geometry
+
+- **Normal module** ($m_n$) → Defines tooth size  
+- **Normal diametral pitch** ($P_n$)
+
+- **Helix angle** ($\beta$)  
+  - Typically ranges from $15^\circ$ to $30^\circ$
+
+- **Normal pressure angle** ($\phi_n$)  
+  - Commonly $20^\circ$
+
+---
+
+#### Transverse Pressure Angle
+
+$$
+\tan(\phi_t) = \frac{\tan(\phi_n)}{\cos(\beta)}
+$$
+
+---
+
+#### Pitch Diameter
+
+$$
+d = \frac{z m_n}{\cos(\beta)}
+$$
+
+---
+
+#### Center Distance
+
+$$
+a = \frac{d_p + d_g}{2} = \frac{m_n (z_p + z_g)}{2 \cos(\beta)}
+$$
+
+---
+
+#### Face Width
+
+$$
+F \geq 3 p_x
+$$
+
+(where $p_x$ = axial pitch)
+
+---
+
+### AGMA Load and Stress Calculations
+
+- $\sigma_F$ = Bending stress  
+- $\sigma_c$ = Contact stress  
+
+---
+
+#### Transmitted Load
+
+$$
+W_t = \frac{2T}{d_p}
+$$
+
+Where:
+- $T$ = Torque  
+- $d_p$ = Pitch diameter  
+
+---
+
+### Factors
+
+- **Dynamic factor** ($K_v$) → velocity & gear quality  
+- **Overload factor** ($K_o$) → shock loading  
+- **Size factor** ($K_s$) → material non-uniformity  
+- **Load distribution factor** ($K_m$) → load across face width  
+
+---
+
+### AGMA Bending Stress Equation
+
+$$
+\sigma_F = W_t K_o K_v K_s \left( \frac{1}{F m_n} \right) \left( \frac{K_m K_B}{J} \right)
+$$
+
+**Where:**
+- $J$ = AGMA geometry factor (tooth form & stress concentration)  
+- $K_B$ = Rim thickness factor (≈ 1 for solid gear blank)
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div align="center">
   
 <img src="../analysis/Calculation Images/AGMA Standards Calculations.png" width="45%"> 
 <img src="../analysis/Calculation Images/AGMA Standards Calculations 2.png" width="49%">
 <img src="../analysis/Calculation Images/AGMA Geometry Factor for Bending.png" width="49%">
 </div>
-
+-->
 <br>
 
-**Interface Stresses**
+# <ins>**Interface Stresses**</ins>
 
 We analyzed the interface stresses at the critical junctions where the gears are keyed to the 20 mm shafts. This analysis involved checking the bearing stress on the key faces and the shear stress across the key cross-sections under the calculated tangential load (Wt). Based on an operating torque of 40.21 N.m used in our test simulations, we verified that the keyways can effectively transmit power without material crushing or shear failure. This ensures a "sacrifice-safe" design, where the key is robust enough for normal operation but protects the more expensive shafts and gears from damage in the event of an extreme mechanical jam.
 
@@ -136,16 +352,16 @@ P = power = 1000 (Watts)
 #### Operating Torque = $\frac{P}{ω}$ = $\frac{1000}{248.7}$ = 40.31 N.m
 </div>
 
-**Bearing Load Check**
+# <ins>**Bearing Load Check**</ins>
 
 The bearing load check was performed to determine the reaction forces generated by the meshing gears. Given the 70-tooth total count for each gear pair and the helical tooth geometry, we calculated the combined radial and axial thrust loads that must be supported by the transmission housing. We compared these loads to the dynamic ratings of our selected bearings to ensure they can maintain shaft alignment during the 2000 RPM operational phase. The results indicate that the bearings are correctly positioned to distribute these loads evenly, preventing shaft deflection that could lead to gear misalignment or housing wear.
 
-**Global Safety Overview**
+# <ins>**Global Safety Overview**</ins>
 
-In conclusion, the Shift Happens transmission design successfully balances high performance with structural safety. By integrating a 6-speed gear range with ratios from 0.4 to 1.1875, we achieved the necessary output torque of 1781.25 N.m while maintaining a compact form factor. Every component, from the 2.5 mm module gears to the optimized 20 mm shafts, was verified through both analytical AGMA formulas and fatigue assessments. This multi-layered analysis confirms that the final assembly is not only capable of meeting the project's torque requirements but is also durable enough for long-term functional use in a prototype environment.
+In conclusion, the Shift Happens transmission design successfully balances high performance with structural safety. By integrating a 6-speed gear range with ratios from 0.4 to 1.1875, we achieved the necessary output torque of 593.75 N.m while maintaining a compact form factor. Every component, from the 2.5 mm module gears to the optimized 20 mm shafts, was verified through both analytical AGMA formulas and fatigue assessments. This multi-layered analysis confirms that the final assembly is not only capable of meeting the project's torque requirements but is also durable enough for long-term functional use in a prototype environment.
 
 eff = efficiency factor (assumed to be 100%)  
-T<sub>initial</sub> = initial torque from the input rod (1500 N.m)  
+T<sub>initial</sub> = initial torque from the input rod (500 N.m)  
 
 <div align="center">
   
@@ -153,14 +369,14 @@ T<sub>initial</sub> = initial torque from the input rod (1500 N.m)
 
 <br>
  
-| Gear Pair | Ratio (G) | Output Torque [N*m] |
+| Gear Pair | Ratio (G) | Output Torque [N.m] |
 |:-------|:-------|:-------|
-| **Gear 1** |  0.4 | 600 |
-| **Gear 2** |  0.667| 1000 |
-| **Gear 3** |  0.8421 | 1263.16 |
-| **Gear 4** |  0.9444 | 1416.67 |
-| **Gear 5** |  1.0 | 1500 |
-| **Gear 6** |  1.1875 | 1781.25 |
+| **Gear 1** |  0.4 | 200 |
+| **Gear 2** |  0.667| 333.33 |
+| **Gear 3** |  0.8421 | 421.05 |
+| **Gear 4** |  0.9444 | 472.22 |
+| **Gear 5** |  1.0 | 500 |
+| **Gear 6** |  1.1875 | 593.75 |
 </div>
 
 <br>
@@ -168,7 +384,7 @@ T<sub>initial</sub> = initial torque from the input rod (1500 N.m)
 > These are NOT all of our calculations, the rest is located in the analysis folder. The calculations given here gives an idea of what we parts we solved for and how each part relates to another variable of the whole transmission system analysis.
 
 ---
-## **Design For Assembly and 3D Printing Discussion**
+# **Design For Assembly and 3D Printing Discussion**
 
 <div align="center">
 
@@ -254,7 +470,7 @@ While creating all the parts in SolidWorks, we were already accounting for how t
 
 ---
 
-## **Anticipated Risks & Weaknesses in Prototyping**
+# **Anticipated Risks & Weaknesses in Prototyping**
 
 Some anticipated risks that could be seen when prototyping is:
 * **Shrinkage of 3D parts after printing could affect fit:**
@@ -266,7 +482,7 @@ Some anticipated risks that could be seen when prototyping is:
 
 ---
 
-## **References**
+# **References**
 * Brain, Marshall. “How Gear Ratios Work.” HowStuffWorks, 20 Oct. 2023, science.howstuffworks.com/transport/engines-equipment/gear-ratio.htm. 
 
 * CarTechBooks. “Manual Transmissions Explained.” CarTechBooks, 26 May 2015, www.cartechbooks.com/blogs/techtips/manual-transmissions-explained.   
