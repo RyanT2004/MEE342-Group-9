@@ -47,6 +47,10 @@ This was determined through estimations of calculations and analysis and after f
 
 This was changed after doing more research on how real world transmission gear pair distances were established. These distances would lower the chances of gears not meshing or possible misalignment in the system.
 
+<div align="center">
+  <img src="../images/FULL_ASSEMBLY_WH_SIDE_EDITED.PNG">
+  The image given above serves as a reference to which gear pair is which and which one we are referring to in this report.  
+</div>
 
 # **Detailed Explanation Of Analyses**
 
