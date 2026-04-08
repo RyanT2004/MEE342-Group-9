@@ -73,13 +73,13 @@ NGI = number of teeth on input gear
 | **Gear 6** | 32 | 38 | 118.14 | 139.35 |
 </div>
 
-### 6th Gear Input / 1st Gear Output - Shaft Bending With Spur Gear
+### 6th Gear Input / 1st Gear Output 
 
 $T = 500 \ \text{N·m}$
 
-$d = 80 \ \text{mm} = \text{pitch diameter}$
+$d = 87.5 \ \text{mm} = \text{pitch diameter}$
 
-$\theta_t : \text{Transverse Pressure Angle}$
+$\theta_t = 14.5 = \text{Transverse Pressure Angle}$
 
 <div align="center">
   
@@ -154,18 +154,18 @@ $\sigma_{vm} = \sqrt{569.9^2 + 3(318.3)^2} = 762.9 \ \text{MPa}$
 
 Repeating this process for the other 5 pairs of gears since all the calculations will run a similar format just like the one shown above. The only varaibles that are changing for each gear pair are the distances from bearing, gear ratios, and gear dimensions such as the diameter. All the critical data values were calculated and shown below in the table.
 
-| Gear | Distance from Bearing $(x)$ | Max Bending Moment $(M_R)$ | Bending Stress $(\sigma_b)$ | Axial Stress $(\sigma_a)$ | Normal Stress $(\sigma_x)$ | Von Mises Stress $(\sigma_{vm})$ | Factor of Safety |
-|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|
-| **1st** |  17.5 mm | 501.348 N.m | 638.3 MPa | 23.4 MPa | 661.7 MPa | 861.3 MPa | 0.2322
-| **2nd** |  102.5 mm | 893.653 N.m | 1,137.8 MPa | 27.9 MPa | 1,165.7 MPa | 1,289.5 MPa | 0.1550
-| **3rd** |  132.5 mm | 1,048.547 N.m | 1,335.1 MPa | 30.8 MPa | 1,365.9 MPa | 1,472.9 MPa | 0.1358
-| **4th** |  217.5 mm | 1,040.397 N.m | 1,324.7 MPa | 32.5 MPa | 1,357.2 MPa | 1,464.9 MPa | 0.1365
-| **5th** |  247.5 mm | 931.308 N.m | 1,185.8 MPa | 33.4 MPa | 1,219.2 MPa | 1,338.1 MPa | 0.1495
-| **6th** |  332.5 mm | 418.849 N.m | 533.3 MPa | 36.6 MPa | 569.9 MPa | 762.9 MPa | 0.2622
+| Gear | Distance from Bearing $(x)$ | Max Bending Moment $(M_R)$ | Bending Stress $(\sigma_b)$ | Axial Stress $(\sigma_a)$ | Normal Stress $(\sigma_x)$ | Von Mises Stress $(\sigma_{vm})$ | 
+|:-------|:-------|:-------|:-------|:-------|:-------|:-------|
+| **1st** |  17.5 mm | 19.459 N.m | 0.65 MPa | 0.09 MPa | 0.74 MPa | 144.18 MPa | 
+| **2nd** |  102.5 mm | 11.97 N.m | 3.99 MPa | 0.12 MPa | 4.11 MPa | 144.24 MPa |
+| **3rd** |  132.5 mm | 16.575 N.m | 5.52 MPa | 0.15 MPa | 5.67 MPa | 144.29 MPa | 
+| **4th** |  217.5 mm | 18.302 N.m | 6.09 MPa | 0.17 MPa | 6.26 MPa | 144.31 MPa | 
+| **5th** |  247.5 mm | 16.945 N.m | 5.64 MPa | 0.18 MPa | 5.82 MPa | 144.30 MPa | 
+| **6th** |  332.5 mm | 6.9623 N.m | 2.32 MPa | 0.21 MPa | 2.53 MPa | 144.20 MPa | 
 
 ## Static Stress Analysis Conclusion
 
-Looking at the stresses applied to the system, the assumed material of alloy steel that will be used to build this transmission will inevitably fail as our calculated Von Mises stress will far exceed the yield strength of the material leading to deformation of the shaft due to the multiaxial loading of the gears and input torque. To solve this problem, the best way would be to decrease the angle of the helical gear and or to increase the shafts diameter. Changing one or both of these two dimensions would significantly reduce the stresses acting upon the shafts allowing it to handle the initial input torque. This high-torque scenario represents our primary safety constraint, and the results confirm that after changing the shaft geometry and comparing it with the material selection, it provides a robust factor of safety, preventing permanent deformation during sudden gear shifts or heavy acceleration.
+Looking at the stresses applied to the system, the assumed material of alloy steel that will be used to build this transmission will hold as our calculated Von Mises stress will be under the yield strength of the material which will support all the forces and multiaxial stresses. This problem was solved by decreasing the angle of the helical gear and increasing the shafts diameter from 20 mm to 40 mm. Changing both of these dimensions would significantly reduce the stresses acting upon the shafts allowing it to handle the initial input torque. This high-torque scenario represents our primary safety constraint, and the results confirm that after changing the shaft geometry and comparing it with the material selection, it provides a robust factor of safety, preventing permanent deformation during sudden gear shifts or heavy acceleration.
 
 ## <ins>**Fatigue Assessment**</ins>
 
@@ -182,6 +182,15 @@ m = module = 2.5 (mm)
 
  V = $\frac{π* d * n}{60 * 1000}$ = $\frac{π* 80 *2375}{60 * 1000}$ = 9.948 m/s
 </div>
+
+| Gear | Tangential Force $(W_t)$ | Axial Force $(W_a)$ | Radial Force $(W_r)$ | 
+|:-------|:-------|:-------|:-------|
+| **1st** |  114.29 N | 30.62 N | 30.60 N | 
+| **2nd** |  161.97 N | 43.40 N | 43.37 N | 
+| **3rd** |  197.86 N | 53.02 N | 52.98 N | 
+| **4th** |  220.46 N | 59.07 N | 59.03 N |
+| **5th** |  233.24 N | 62.50 N | 62.45 N | 
+| **6th** |  279.02 N | 74.76 N | 74.70 N | 
 
 ## <ins>**Gear Tooth Loading - Calculations for AGMA Standards**</ins>
 
@@ -327,6 +336,14 @@ Where:
 - $J$ = AGMA geometry factor (tooth form & stress concentration)  
 - $K_B$ = Rim thickness factor (≈ 1 for solid gear blank)
 
+| Gear |  Bending Stress $(\sigma_b)$ | Allowable Stress | Factor of Safety |
+|:-------|:-------|:-------|:-------|
+| **1st** |  20,001.87 psi | 32,700.11 psi | 1.635
+| **2nd** |  15,719.76 psi | 32,700.11 psi | 2.080
+| **3rd** |  14,043.07 psi | 32,700.11 psi | 2.329
+| **4th** |  12,719.39 psi | 32,700.11 psi | 2.571
+| **5th** |  11,244.36 psi | 32,700.11 psi | 2.908
+| **6th** |  8,784.06 psi | 32,700.11 psi | 3.723
 
 ## <ins>**Interface Stresses**</ins>
 
