@@ -75,7 +75,7 @@ NGI = number of teeth on input gear
 
 ### 6th Gear Input / 1st Gear Output 
 
-### 1. Given Parameters
+### 1. Parameters and Assumptions
 
 $$
 P = 10 \ \text{hp}, \quad V = 1000 \ \text{ft/min}
@@ -321,7 +321,7 @@ $\sigma_{vm} = \sqrt{569.9^2 + 3(318.3)^2} = 762.9 \ \text{MPa}$
 <br>
 -->
 
-Repeating this process for the other 5 pairs of gears since all the calculations will run a similar format just like the one shown above. The only varaibles that are changing for each gear pair are the distances from bearing, gear ratios, and gear dimensions such as the diameter. All the critical data values were calculated and shown below in the table.
+Repeating this process for the other 5 pairs of gears since all the calculations will run a similar format just like the one shown above. The only variables that are changing for each gear pair are the distances from bearing, gear ratios, and gear dimensions such as the diameter. All the critical data values were calculated and shown below in the table.
 
 | Gear | Distance from Bearing $(x)$ | Max Bending Moment $(M_R)$ | Bending Stress $(\sigma_b)$ | Axial Stress $(\sigma_a)$ | Normal Stress $(\sigma_x)$ | Von Mises Stress $(\sigma_{vm})$ | 
 |:-------|:-------|:-------|:-------|:-------|:-------|:-------|
@@ -352,7 +352,7 @@ m = module = 2.5 (mm)
  V = $\frac{π* d * n}{60 * 1000}$ = $\frac{π* 80 *2375}{60 * 1000}$ = 9.948 m/s
 </div>
 
-### 1. Given Parameters
+### 1. Parameters and Assumptions
 
 
 
@@ -417,7 +417,7 @@ $$
 
 For the gear tooth loading section, we utilized AGMA standards with a focus on the Gear 6 assembly, which handles the highest output torque. The gears were designed with a 3.5 mm module, a 14.5° pressure angle, and a 25 mm face width. We calculated a dynamic factor (Kv) of 1.741 to account for the mesh speeds and quality of the gear teeth. Using these parameters, the AGMA bending stress was calculated to be well within safe limits, indicating that the teeth are sized appropriately to prevent root breakage or surface pitting while maintaining the fixed 125 mm center distance required for the housing.
 
-### 1. Assumed Parameters
+### 1. Parameters and Assumptions
 
 $$
 C_{mc} = C_{pm} = C_{e} = 1 , \quad C_{pf} = 0.1, \quad C_{ma} = 0.15
@@ -659,7 +659,7 @@ Where:
 
 -->
 
-Repeating this process for the other 5 pairs of gears since all the calculations will run a similar format just like the one shown above. The only varaibles that are changing for each gear pair are the AGMA bending stress, pitch diameter, and number of gear teeth. All the critical data values were calculated and shown below in the table.
+Repeating this process for the other 5 pairs of gears since all the calculations will run a similar format just like the one shown above. The only variables that are changing for each gear pair are the AGMA bending stress, pitch diameter, and number of gear teeth. All the critical data values were calculated and shown below in the table.
 
 | Gear |  Bending Stress $(\sigma_b)$ | Allowable Stress | Factor of Safety |
 |:-------|:-------|:-------|:-------|
@@ -702,7 +702,7 @@ T<sub>initial</sub> = initial torque from the input rod (500 N.m)
 
 G = $\frac{NGO}{NGI}$
 
-#### **Output Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff**
+Output Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff
 
 <br>
  
