@@ -424,7 +424,7 @@ C_{mc} = C_{pm} = C_{e} = 1 , \quad C_{pf} = 0.1, \quad C_{ma} = 0.15
 $$
 
 $$
-K_m = 1 + C_mc*(C_pf*C_pm + C_ma*C_e) = 1.25
+K_m = 1 + C_{mc}*(C_{pf}*C_{pm} + C_{ma}*C_e) = 1.25
 $$
 
 $$
@@ -442,7 +442,7 @@ $$
 AGMA relation:
 
 $$
-W_t = \frac{33000 \, P}{V} = \frac{33000(10)}{1000} = 330 \ \text{lb}
+W_t = \frac{33000 \ P}{V} = \frac{33000(10)}{1000} = 330 \ \text{lb}
 $$
 Teeth:
 
