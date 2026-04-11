@@ -49,7 +49,7 @@ This was changed after doing more research on how real world transmission gear p
 
 <div align="center">
   <img src="../images/FULL_ASSEMBLY_WH_SIDE_EDITED.PNG">
-  The image given above serves as a reference to which gear pair is which and the one we are referring to in this report.  
+  <p><em>The image given above serves as a reference to which gear pair is which and the one we are referring to in this report.</em></p>
 </div>
 
 # **Detailed Explanation Of Analyses**
@@ -444,6 +444,7 @@ AGMA relation:
 $$
 W_t = \frac{33000 \ P}{V} = \frac{33000(10)}{1000} = 330 \ \text{lb}
 $$
+
 Teeth:
 
 $$
@@ -698,7 +699,9 @@ eff = efficiency factor (assumed to be 100%)
 T<sub>initial</sub> = initial torque from the input rod (500 N.m)  
 
 <div align="center">
-  
+
+G = $\frac{NGO}{NGI}$
+
 #### **Output Torque = T<sub>initial</sub> * $\frac{NGO}{NGI}$ * eff**
 
 <br>
