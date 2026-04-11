@@ -56,7 +56,7 @@ This was changed after doing more research on how real world transmission gear p
 
 ## <ins>**Static Stress and Factor of Safety**</ins>
 
-We performed a static stress analysis focusing on the transmission’s response to a peak input torque of 500 N.m. Considering the fact that this model is roughly half the size of an actual model, this input torque seems reasonable for our purposes. Our analysis tracked the torque multiplication across all six gear pairs, reaching a maximum output of 593.75 N.m in the sixth gear. By applying these loads to our 20 mm shafts, we evaluated the bending and torsional stresses against the material's yield strength. We also solved calculations based off the different types of gears we should use, those being spur gears and helical gears as both would have different results as shown below.
+We performed a static stress analysis focusing on the transmission’s response to a peak input torque of 500 N.m. Considering the fact that this model is roughly half the size of an actual model, this input torque seems reasonable for our purposes. Our analysis tracked the torque multiplication across all six gear pairs, reaching a maximum output of 593.75 N.m in the sixth gear. By applying these loads to our 40 mm shafts, we evaluated the bending and torsional stresses against the material's yield strength. 
 
 NGO = number of teeth on output gear  
 NGI = number of teeth on input gear  
@@ -75,9 +75,177 @@ NGI = number of teeth on input gear
 
 ### 6th Gear Input / 1st Gear Output 
 
-$T = 500 \ \text{N·m}$
+### 1. Given Parameters
 
-$d = 87.5 \ \text{mm} = \text{pitch diameter}$
+$$
+P = 10 \ \text{hp}, \quad V = 1000 \ \text{ft/min}
+$$
+
+$$
+\psi = 15^\circ, \quad \phi_n = 14.5^\circ
+$$
+
+$$
+T = 500 \ \text{N.m} = 500{,}000 \ \text{N.mm}
+$$
+
+$$
+d_p = 3584 \ \text{mm}, \quad x = 332.5 \ \text{mm}, \quad L = 350 \ \text{mm}
+$$
+
+---
+
+### 2. Tangential Load
+
+Torque-based relation:
+
+$$
+W_t = \frac{2T}{d_p} = \frac{2(500000)}{3584} = 279.02 \ \text{N}
+$$
+
+---
+
+### 3. Gear Forces
+
+Transverse pressure angle:
+
+$$
+\tan(\phi_t) = \frac{\tan(14.5^\circ)}{\cos(15^\circ)}
+$$
+
+$$
+\phi_t \approx 15.1^\circ
+$$
+
+Forces:
+
+$$
+W_a = W_t \tan(\psi) = 279.02 \tan(15^\circ) = 74.76 \ \text{N}
+$$
+
+$$
+W_r = W_t \tan(\phi_t) = 279.02\tan(15.1^\circ) = 74.70 \ \text{N}
+$$
+
+---
+
+### 4. Shaft Reactions
+
+#### Horizontal Plane
+
+$$
+R_{Bx} = \frac{W_t x}{L} = \frac{279.02 \cdot 332.5}{350} = 265.067 \ \text{N}
+$$
+
+$$
+R_{Ax} = W_t - R_{Bx} = 279.02 - 265.067 = 13.9509 \ \text{N}
+$$
+
+$$
+M_x = R_{Ax} \cdot x = 13.9509 \cdot 332.5 = 4638.7\ \text{N.mm}
+$$
+
+---
+
+#### Vertical Plane
+
+$$
+M_{\text{axial}} = W_a \left(\frac{d_p}{2}\right) = 74.76 \cdot 90.59 = 6772.5 \ \text{N.mm}
+$$
+
+$$
+R_{By} = \frac{W_r x + M_{\text{axial}}}{L}
+$$
+
+$$
+R_{By} = \frac{74.70 \cdot 332.5 + 6772.5}{350} = 90.3192 \ \text{N}
+$$
+
+$$
+R_{Ay} = W_r - R_{By} = 74.70 - 90.3192 = -15.6148 \ \text{N}
+$$
+
+$$
+M_y = |R_{Ay} x| = -15.6148 \cdot 332.5 = 5191.9 \ \text{N.mm}
+$$
+
+---
+
+### 5. Total Bending Moment
+
+$$
+M_{\text{total}} = \sqrt{M_x^2 + M_y^2}
+$$
+
+$$
+M_{\text{total}} = \sqrt{(4638.7)^2 + (5191.9)^2} = 6962.3 \ \text{N.mm}
+$$
+
+---
+
+### 6. Shaft Geometry
+
+$$
+d_o = 40 \ \text{mm}, \quad d_i = 34 \ \text{mm}
+$$
+
+$$
+I = \frac{\pi}{64}(d_o^4 - d_i^4) = 0.60 \times 10^5 \ \text{mm}^4
+$$
+
+$$
+J = \frac{\pi}{32}(d_o^4 - d_i^4) = 1.20 \times 10^5 \ \text{mm}^4
+$$
+
+$$
+c = 20 \ \text{mm}
+$$
+
+$$
+A = \frac{\pi}{4}(d_o^2 - d_i^2) = 348.7 \ \text{mm}^2
+$$
+
+---
+
+### 7. Stress Calculations
+
+Bending stress:
+
+$$
+\sigma_b = \frac{M_{\text{total}} c}{I} = \frac{6962.3 \cdot 20}{0.60 \times 10^5} = 2.32 \ \text{MPa}
+$$
+
+Axial stress:
+
+$$
+\sigma_{\text{axial}} = \frac{W_a}{A} = \frac{74.76}{348.7} = 0.21 \ \text{MPa}
+$$
+
+Torsional stress:
+
+$$
+\tau = \frac{T c}{J} = \frac{500000 \cdot 20}{1.20 \times 10^5} = 83.24 \ \text{MPa}
+$$
+
+Combined stress:
+
+$$
+\sigma_x = 2.32 + 0.21 = 2.53 \ \text{MPa}
+$$
+
+Von Mises:
+
+$$
+\sigma_{\text{vm}} = \sqrt{(2.53)^2 + 3(83.24)^2} = 144.20 \ \text{MPa}
+$$
+
+---
+
+
+<!--
+$T = 500 \ \text{N.m}$
+
+$d = 3.584 \ \text{m} = \text{pitch diameter}$
 
 $\theta_t = 14.5 = \text{Transverse Pressure Angle}$
 
@@ -85,13 +253,13 @@ $\theta_t = 14.5 = \text{Transverse Pressure Angle}$
   
 $W_t = \dfrac{2 \cdot T}{d}$
 
-$W_t = 12500 \ \text{N}$
+$W_t = 279.018 \ \text{N}$
 
 <br>
 
 $W_r = W_t \cdot \tan(\theta_t)$
 
-$W_r = 4391 \ \text{N}$
+$W_r = 74.70 \ \text{N}$
 
 <br>
 
@@ -114,7 +282,7 @@ $R_2 = 12586.366 \ \text{N}$
 
 $R_1 = 662.441 \ \text{N}$
 
-$M_R = 220.2616 \ \text{N·m}$
+$M_R = 220.2616 \ \text{N.m}$
 
 <br>
 
@@ -151,6 +319,7 @@ $\sigma_{vm} = \sqrt{569.9^2 + 3(318.3)^2} = 762.9 \ \text{MPa}$
 </div>
 
 <br>
+-->
 
 Repeating this process for the other 5 pairs of gears since all the calculations will run a similar format just like the one shown above. The only varaibles that are changing for each gear pair are the distances from bearing, gear ratios, and gear dimensions such as the diameter. All the critical data values were calculated and shown below in the table.
 
@@ -183,6 +352,58 @@ m = module = 2.5 (mm)
  V = $\frac{π* d * n}{60 * 1000}$ = $\frac{π* 80 *2375}{60 * 1000}$ = 9.948 m/s
 </div>
 
+### 1. Given Parameters
+
+
+
+$$
+\psi = 15^\circ, \quad \phi_n = 14.5^\circ
+$$
+
+$$
+T = 500 \ \text{N.m} = 500{,}000 \ \text{N.mm}
+$$
+
+$$
+d_p = 3584 \ \text{mm}, \quad x = 332.5 \ \text{mm}, \quad L = 350 \ \text{mm}
+$$
+
+---
+
+### 2. Tangential Load
+
+Torque-based relation:
+
+$$
+W_t = \frac{2T}{d_p} = \frac{2(500000)}{3584} = 279.02 \ \text{N}
+$$
+
+---
+
+### 3. Gear Forces
+
+Transverse pressure angle:
+
+$$
+\tan(\phi_t) = \frac{\tan(14.5^\circ)}{\cos(15^\circ)}
+$$
+
+$$
+\phi_t \approx 15.1^\circ
+$$
+
+Forces:
+
+$$
+W_a = W_t \tan(\psi) = 279.02 \tan(15^\circ) = 74.76 \ \text{N}
+$$
+
+$$
+W_r = W_t \tan(\phi_t) = 279.02\tan(15.1^\circ) = 74.70 \ \text{N}
+$$
+
+<br>
+
 | Gear | Tangential Force $(W_t)$ | Axial Force $(W_a)$ | Radial Force $(W_r)$ | 
 |:-------|:-------|:-------|:-------|
 | **1st** |  114.29 N | 30.62 N | 30.60 N | 
@@ -196,6 +417,105 @@ m = module = 2.5 (mm)
 
 For the gear tooth loading section, we utilized AGMA standards with a focus on the Gear 6 assembly, which handles the highest output torque. The gears were designed with a 3.5 mm module, a 14.5° pressure angle, and a 25 mm face width. We calculated a dynamic factor (Kv) of 1.741 to account for the mesh speeds and quality of the gear teeth. Using these parameters, the AGMA bending stress was calculated to be well within safe limits, indicating that the teeth are sized appropriately to prevent root breakage or surface pitting while maintaining the fixed 125 mm center distance required for the housing.
 
+### 1. Assumed Parameters
+
+$$
+C_{mc} = C_{pm} = C_{e} = 1 , \quad C_{pf} = 0.1, \quad C_{ma} = 0.15
+$$
+
+$$
+K_m = 1 + C_mc*(C_pf*C_pm + C_ma*C_e) = 1.25
+$$
+
+$$
+K_{s} = K_{B} = 1 , \quad K_{V} = 1.3, \quad K_{O} = 1,5
+$$
+
+$$
+{HB} = 250, \quad F = \frac{25 \,}{25.4} = 0.9843
+$$
+
+<br>
+
+### 1. AGMA Bending Stress
+
+AGMA relation:
+
+$$
+W_t = \frac{33000 \, P}{V} = \frac{33000(10)}{1000} = 330 \ \text{lb}
+$$
+Teeth:
+
+$$
+N_p = 32
+$$
+
+Convert diameter:
+
+$$
+d_p = \frac{181.1733}{25.4} = 7.13 \ \text{in}
+$$
+
+Diametral pitch:
+
+$$
+P_d = \frac{32}{7.13} = 4.49
+$$
+
+Virtual teeth:
+
+$$
+N_v = \frac{32}{\cos^3(15^\circ)} = 35.7
+$$
+
+Geometry factor:
+
+$$
+J_{\text{spur}} = 0.484 - \frac{2.87}{35.7} = 0.404
+$$
+
+$$
+J = \frac{0.404}{\cos(15^\circ)} = 0.418
+$$
+
+AGMA stress:
+
+$$
+\sigma_t = \frac{W_t K_O K_v K_s K_m K_B P_d}{F J}
+$$
+
+$$
+\sigma_t = \frac{330 \cdot 1.5 \cdot 1.3 \cdot 1.0 \cdot 1.3 \cdot 1.0 \cdot 4.49}{(25/25.4)(0.418)} = 8784.06 \ \text{psi}
+$$
+
+---
+
+### 2. Safety Factor
+
+Material strength:
+
+$$
+S_t = 0.533(250) + 88.3 = 221.6 \ \text{MPa}
+$$
+
+Convert:
+
+$$
+S_t = 32130 \ \text{psi}
+$$
+
+Fatigue factor:
+
+$$
+Y_N = 1.3558 (10^7)^{-0.0178} \approx 1.0176
+$$
+
+Safety factor:
+
+$$
+S_F = \frac{S_t Y_N}{\sigma_t} = \frac{32130 \cdot 1.0176}{10420} = 3.723
+$$
+<!--
 ### AGMA Contact Stress Calculation ("Pitting Resistance")
 
 $$
@@ -335,6 +655,10 @@ $$
 Where:
 - $J$ = AGMA geometry factor (tooth form & stress concentration)  
 - $K_B$ = Rim thickness factor (≈ 1 for solid gear blank)
+
+-->
+
+Repeating this process for the other 5 pairs of gears since all the calculations will run a similar format just like the one shown above. The only varaibles that are changing for each gear pair are the AGMA bending stress, pitch diameter, and number of gear teeth. All the critical data values were calculated and shown below in the table.
 
 | Gear |  Bending Stress $(\sigma_b)$ | Allowable Stress | Factor of Safety |
 |:-------|:-------|:-------|:-------|
@@ -496,3 +820,5 @@ Some anticipated risks that could be seen when prototyping is:
 * Hufford, Kelly. “How Manual Transmission Are Manufactured and Tested.” Transpartswarehouse.com, Transparts Warehouse Inc, 30 Apr. 2024, transpartswarehouse.com/blog/post/how-manual-transmission-are-manufactured-and-tested.
 * https://gearsolutions.com/features/determination-of-the-agma-j-factor-for-internal-spur-gears/
 * https://www.engineersedge.com/calculators/agma_gear_tooth_bending_stress_15856.htm
+
+
