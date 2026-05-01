@@ -58,7 +58,7 @@ For the housing, the front and back were printed out as the entire housing would
   <p><em>Figure 6. Final Prototype
 </div>
 
-Throughout the process, we encountered several engineering challenges, particularly with dimensional tolerances. Achieving proper fits for bearings and gear teeth required careful adjustment, as even small deviations significantly affected performance. One key issue was material shrinkage. Using the Bambu Lab PETG HF, we observed an average shrinkage of approximately 0.03 mm. To compensate, critical dimensions, especially holes for bearings and interfaces with aluminum tubes, were slightly increased to ensure proper press and slip fits.  
+Throughout the process, we encountered several engineering challenges, particularly with dimensional tolerances. Achieving proper fits for bearings and gear teeth required careful adjustment, as even small deviations significantly affected performance. One key issue was material shrinkage. Using the Bambu Lab PETG HF, we observed an average shrinkage of approximately 0.30 mm. To compensate, critical dimensions, especially holes for bearings and interfaces with aluminum tubes, were slightly increased to ensure proper press and slip fits.  
 
 A major issue we encountered was with the aluminum tubes we sourced. Although they were specified with tolerances of ±0.01 mm, the actual measured variation ranged from approximately 0.05 mm to 0.25 mm. This inconsistency significantly impacted bearing fitment, requiring extensive manual sanding of the tubes to achieve the proper diameter. While time-intensive, this step was necessary to ensure smooth rotation and proper assembly of the gear system.  
 
@@ -80,7 +80,7 @@ We ran into many issues with our design during the process of its creation. The 
 
 Our second issue was with the helical angle of our helical gears. The default angle SolidWorks created for the gears resulted in excessive bending stress along the shaft, and it was much higher than the angle typically found in a transmission. To fix this, we had to lower the angle to decrease the stress.  
 
-Another one of our errors was with the tolerance of the synchronizers. In our CAD model, they had zero tolerance, so when we printed, the pieces did not fit together. To remedy this, our group added a 0.15 mm tolerance.
+Another one of our errors was with the tolerance of the synchronizers. In our CAD model, they had zero tolerance, so when we printed, the pieces did not fit together. To remedy this, our group added a 0.30 mm tolerance.
 
 Our last major error was with the housing. In creating the design, our group did not recognize that the housing would be too large to print, so we split it into multiple pieces. After deliberation, we then realized that the amount of filament required to print all the pieces of the housing structure would cost too much. To resolve this, we decided to print only the walls of the housing using PLA which would result in a faster and cheaper print.  
 
